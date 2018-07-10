@@ -1,4 +1,4 @@
-from loader import words
+from .loader import words
 import sys
 
 
@@ -7,6 +7,12 @@ def trans_word(text):
         return words[text]
     else:
         return text
+
+# Bigyo:
+# 看起來他是前面如果沒字才往後加 buffer
+# 但也不太確定
+# 之後有需要再改
+# 先擺著
 
 def trans_sentense(text):
     ret = ""
