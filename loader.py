@@ -8,9 +8,11 @@ words = {}
 words[""] = ""
 
 def load(filename):
-    tmp_words = json.loads(open(filename).read())
+    f = open(filename)
+    tmp_words = json.loads(f.read())
     words.update(tmp_words)
-    
+    f.close()
+
 directory = os.path.dirname(os.path.realpath(__file__))
 for root, dirnames, filenames in os.walk("%s/dict"%(directory)):
     for filename in filenames:
